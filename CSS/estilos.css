@@ -1,0 +1,118 @@
+/*
+font-family: 'Averia Serif Libre', cursive;     //font1 
+font-family: 'Freehand', cursive;               //font2 
+font-family: 'Source Sans Pro', sans-serif;     //font3 */
+*/
+
+* {
+box-sizing: border-box;
+margin: 0;
+padding: 0;
+}
+
+html {
+    height: 100%;
+}
+
+
+.entrar {
+    font-family: 'Freehand', cursive;
+    font-size: 2.5rem;
+    text-align: center;
+    text-shadow: 2px 2px 2px rgb(198, 198, 109);    
+}
+.info {
+    font-family: 'Averia Serif Libre', cursive;
+    font-size: 1.5rem;
+    text-align: center;
+    text-shadow: 1px 1px 2px rgb(198, 198, 109);
+}
+
+body{
+    background-color: rgb(21, 54, 122);
+    color: black;;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 1.2rem;
+    min-height: 100%;
+}
+
+
+.grid-container > * {
+    box-shadow: -1px 1px 7px 0px rgb(0, 0, 0,0.7);
+    border-radius: 8px;
+    padding: 10px;
+    text-align: center;
+}
+
+.entrar {
+    grid-area: entrar;
+}
+
+.header {
+    grid-area: header;
+    background-color: #85aedd;
+    ;
+}
+.navbar {
+    grid-area: navbar;
+    background-color: #afd6af;
+}
+.sidebar {
+    grid-area: sidebar;
+    background-color: #fdcfcf;
+}
+.main {
+    grid-area: main;
+    background-color: #c76060;
+}
+.footer {
+    grid-area: footer;
+    background-color: #85aedd;
+}
+
+
+.grid-container {
+    display: grid;
+    gap: 10px;
+    grid-template:
+        "entrar"    100px
+        "header"    100px
+        "navbar"    50px
+        "main"      auto
+        "sidebar"   100px
+        "footer"    100px
+        "info"      100px;
+}
+
+@media (min-width: 600px) {
+    .grid-container {
+        /*
+        grid-template-columns: 200px auto;
+        grid-template-rows: 100px 50px auto 100px;
+    grid-template-areas: 
+        "header header"
+        "navbar navbar"
+        "sidebar main"
+        "footer footer";
+        */
+
+        grid-template: 
+        "info       entrar"     100px
+        "header     header"     100px
+        "navbar     navbar"     50px
+        "sidebar    main"       auto
+        "footer     footer"     100px /
+        200px       auto;
+    }
+}
+
+@media (min-width: 900px) {
+    .grid-container {
+        grid-template: 
+        "info       entrar  entrar"     100px
+        "header     header  header"     100px
+        "navbar     main    sidebar"    auto
+        "footer     footer  footer"     100px /
+        200px       auto    200px;
+    }
+}
